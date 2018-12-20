@@ -1,6 +1,5 @@
 {
-  "name": "helloionic1",
+  "name": "helloionic",
   "integrations": {},
-  "type": "ionic-angular",
-  "id": "75dc6a8e"
+  "type": "ionic-angular"
 }
