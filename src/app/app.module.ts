@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewPlacePage } from '../pages/new-place/new-place';
 import { PlaceService } from '../services/places.service';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PlaceService } from '../services/places.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +31,8 @@ import { PlaceService } from '../services/places.service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PlaceService
+    PlaceService,
+    Storage
   ]
 })
 export class AppModule {}
