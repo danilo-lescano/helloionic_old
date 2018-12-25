@@ -11,13 +11,10 @@ export class PlaceService {
         this.places.push(place);
         this.storage.set('places', this.places);
     }
-    getPlaces(){
-        return this.storage.get('places')
-        .then(
-            (places)=>{
-                this.places = places !== null ? places : [];
-                return this.places.slice();
-            }
-        );
+    async getPlaces(){
+        this.places = await this.storage.get('places');
+        if(this.places === null)
+            this.places = [];
+        return this.places.slice();
     }
 }

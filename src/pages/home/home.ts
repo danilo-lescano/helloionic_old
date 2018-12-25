@@ -13,11 +13,8 @@ export class HomePage {
   constructor(public navCtrl: NavController, private placeService: PlaceService) {
 
   }
-  ionViewWillEnter(){
-    this.placeService.getPlaces()
-    .then(
-      (places)=> this.places = places
-    );
+  async ionViewWillEnter(){
+    this.places = await this.placeService.getPlaces();
   }
   renderNewPlace(){
     this.navCtrl.push(NewPlacePage);
