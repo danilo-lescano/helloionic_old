@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NewPlacePage } from '../new-place/new-place';
 import { PlaceService } from '../../services/places.service';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -18,5 +19,8 @@ export class HomePage {
   }
   renderNewPlace(){
     this.navCtrl.push(NewPlacePage);
+  }
+  telaLogin(){
+    this.navCtrl.push(LoginPage);
   }
 }
